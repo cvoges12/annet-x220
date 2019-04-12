@@ -47,4 +47,4 @@ formatDisk "gpt" "/dev/sda"
 encryptPart "enc-pv" "/dev/sda2"
 lvmSetup "vg" "/dev/mapper/enc-pv"
 fsSetup
-mvConfig "ghibli-x220"
+mvConfig "annet-x220"
