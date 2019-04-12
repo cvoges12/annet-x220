@@ -461,8 +461,19 @@
             };
           };
           startup = [
-            { command = "systemctl --user restart polybar"; 
+            { command = "wal -i /home/cvoges12/Pictures/wallpapers/Unsorted";
+              always = false;
+              notification = false; }
+            { command = "systemctl --user restart polybar.service"; 
               always = true; 
+              notification = false; }
+            { command = "urxvt -hold -e curl 'wttr.in/63131?m&M&1&A&F'";
+              always = false;
+              workspace = "0";
+              notification = false; }
+            { command = "urxvt -hold -e ikhal";
+              always = false;
+              workspace = "0";
               notification = false; }
           ];
         };

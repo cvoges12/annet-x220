@@ -6,12 +6,12 @@
       EDITOR = "nvim";
     };
     systemPackages = with pkgs; [
-    
+
       # Applications
       ## Audio
       #cava
+      caudec
       mopidy
-      mopidy-gmusic
       mopidy-soundcloud
       mopidy-spotify
       ncmpcpp
@@ -35,7 +35,7 @@
       ## Networking
       ### Browsers
       firefox
-      #w3m
+      surf
 
       ### Feedreaders
       #newsboat
@@ -48,7 +48,7 @@
       #quaternion
       #riot-web
       #signal-desktop
-      #tdesktop
+      tdesktop
       #telegram-cli
       
       ### IRC
@@ -74,7 +74,7 @@
       # Build-Support
       ## CC-Wrapper
       #clang
-      #gcc
+      gcc
 
       ## Trivial-Builder
       idris
@@ -85,8 +85,6 @@
       # Development
       ## Compilers
       ghc
-      #haskell.packages.ghc822.ghc    # collision. create devenv? or find way to compile djinn
-      #haskell.packages.ghc822    # not a package
       #llvm
       openjdk
 
@@ -135,6 +133,9 @@
       unzip
       zip
 
+      ## Filesystems
+      android-file-transfer
+
       ## Graphics
       pywal
       scrot    # OR escrotum OR maim OR yaxg
@@ -161,6 +162,7 @@
 
       ## System
       htop
+      lshw
       ps_mem
       tree
 

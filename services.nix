@@ -72,6 +72,7 @@
       autorun = true;
       layout = "us";
       xkbVariant = "colemak";
+      xkbOptions = "altwin:swap_alt_win,caps:bksp";
       startDbusSession = true;
       terminateOnReset = true;
       libinput = {
