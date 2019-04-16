@@ -4,3 +4,6 @@
 [submodule "common"]
 	path = common
 	url = https://github.com/cvoges12/annet-common
+[submodule "personal"]
+	path = personal
+	url = https://github.com/cvoges12/annet-personal

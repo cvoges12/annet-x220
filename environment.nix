@@ -11,9 +11,6 @@
       ## Audio
       #cava
       caudec
-      mopidy
-      mopidy-soundcloud
-      mopidy-spotify
       ncmpcpp
 
       ## Editors
@@ -74,7 +71,7 @@
       # Build-Support
       ## CC-Wrapper
       #clang
-      gcc
+      #gcc
 
       ## Trivial-Builder
       idris

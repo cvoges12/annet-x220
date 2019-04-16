@@ -131,6 +131,7 @@
 
               background = "\${colors.background}";
               foreground = "\${colors.foreground}";
+              line-size = 2;
 
               fixed-center = true;
               modules-left = "i3";
@@ -191,19 +192,17 @@
               label-mode = "%mode%";
 
               label-focused = "%icon%";
-              label-focused-font = "3";
+              label-focused-underline = "\${colors.foreground}";
               label-focused-padding = 1;
 
               label-unfocused = "%icon%";
-              label-unfocused-font = "4";
               label-unfocused-padding = 1;
 
               label-visible = "%icon%";
-              label-visible-font = "4";
+              label-visible-underline = "\${colors.foreground}";
               label-visible-padding = 1;
 
               label-urgent = "%icon%";
-              label-urgent-font = "4";
               label-urgent-padding = 1;
             };
 
