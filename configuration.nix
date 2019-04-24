@@ -7,7 +7,7 @@
     ./common/import.nix
     ./fileSystems.nix
     ./networking.nix
-    ./personal/import.nix
     ./swapDevices.nix
+    (import (builtins.fetchGit https://github.com/cvoges12/annet-personal) {})
   ];
 }
