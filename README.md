@@ -15,9 +15,10 @@ Features
 Install
 -------
 ```
-curl https://0x0.st/zPgc.sh > install.sh
+git clone https://github.com/cvoges12/annet-x220
+cd annet-x220
 chmod +x install.sh
-bash install.sh
+./install.sh
 ```
 
 Start Wireless
