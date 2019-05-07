@@ -63,22 +63,26 @@ import Prelude hiding (FilePath)
 import Data.Text.Lazy (Text)
 default (Int, Text)
 
+diskFormat_ :: IO ()
 diskFormat_ table disk = shelly $ do
     run_ "parted" [disk, "--script", "mklabel", table]
     run_ "sgdisk" ["-og", disk]
     run_ "sgdisk" ["-n", "1:0:500M", "-c", "1:\"EFI\"", "-t", "1:ef00", "-g", disk]
     run_ "sgdisk" ["-n", "2:0:0", "-c", "2:\"LVM\"", "-t", "2:8301", "-g", disk]
     
+partEncrypt_ :: IO ()
 partEncrypt_ physVol fileSys = shelly $ do
     run_ "cryptsetup" ["luksFormat", fileSys]
     run_ "cryptsetup" ["luksOpen", fileSys, physVol]
 
+lvm_ :: IO ()
 lvm_ physVol volGroup = shelly $ do
     run_ "pvcreate" [volGroup]
     run_ "vgcreate" [volGroup, physVol]
     run_ "lvcreate" ["-n", "swap", volGroup, "-L", "8G"]
     run_ "lvcreate" ["-n", "root", volGroup, "-l", "100%FREE"]
 
+fileSystems :: IO ()
 fileSystems disk = shelly $ do
     run_ "mkfs.vfat" ["-n", "EFI", (disk ++ '1')]
     run_ "mkfs.ext4" ["-L", "root", "/dev/vg/root"]
@@ -88,6 +92,7 @@ fileSystems disk = shelly $ do
     run_ "mount" [(disk ++ '1'), "/mnt/boot"]
     run_ "swapon" ["/dev/vg/swap"]
 
+main :: IO ()
 main = shelly $ verbosely $ do
     putStrLn $ "Input the disk you would like to install to: "
     disk <- getLine
