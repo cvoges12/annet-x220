@@ -8,13 +8,13 @@
     ./networking.nix
     ./swapDevices.nix
     (import (builtins.fetchGit {
-      url = "https://github.com/cvoges12/annet-common";
+      url = "https://gitlab.com/cvoges12/annet-common";
       ref = "master";
     }) {})
     (import (builtins.fetchGit {
-      url = "https://github.com/cvoges12/annet-personal";
+      url = "https://gitlab.com/cvoges12/annet-personal";
       ref = "master";
-      rev = "1abdbe1a6390c264800b46d4c41357c18710f1cf";
+      rev = "41dd4224cc9023d7fbc3eeeb1604712edd1bfc36";
     }) {})
   ];
 }
