@@ -14,7 +14,7 @@
     (import (builtins.fetchGit {
       url = "https://gitlab.com/cvoges12/annet-personal";
       ref = "master";
-      rev = "41dd4224cc9023d7fbc3eeeb1604712edd1bfc36";
+      rev = "d18def567fb7c1f3ae97c66fb79f22b6c5f52938";
     }) {})
   ];
 }
