@@ -27,7 +27,7 @@ fsSetup(){
 lvmSetup(){
   vg = $1
   pv = $2
-  pvcreate $vg
+  pvcreate $pv
   vgcreate $vg $pv
   lvcreate -n swap vg -L 8G
   lvcreate -n root vg -l 100%FREE
